@@ -48,7 +48,7 @@
             <div class="container">
                 <h2>Laboratorium Patologi Klinik</h2>
                 <p>Detail lengkap: Layanan ini mencakup tes rutin seperti hemoglobin, gula darah, dan kolesterol. Waktu hasil: 1-2 hari. Biaya mulai dari Rp 50.000.</p>
-                <a href="mailto:info@kliniksehat.com" class="btn">Hubungi Kami</a>
+                <a href="#kontak" class="btn" onclick="scrollToSection('kontak')">Pesan Layanan</a>
             </div>
         </section>
 
@@ -56,7 +56,7 @@
             <div class="container">
                 <h2>Lab Patologi Anatomi</h2>
                 <p>Detail lengkap: Biopsi dan pemeriksaan mikroskopis untuk diagnosis akurat. Konsultasi dengan patologis tersedia. Waktu hasil: 3-5 hari.</p>
-                <a href="mailto:info@kliniksehat.com" class="btn">Hubungi Kami</a>
+                <a href="#kontak" class="btn" onclick="scrollToSection('kontak')">Pesan Layanan</a>
             </div>
         </section>
 
@@ -64,7 +64,40 @@
             <div class="container">
                 <h2>Lab Transfusi (Bank Darah)</h2>
                 <p>Detail lengkap: Stok darah lengkap (A, B, AB, O), tes HIV/Hepatitis gratis untuk donor. Layanan 24/7 untuk darurat.</p>
-                <a href="mailto:info@kliniksehat.com" class="btn">Hubungi Kami</a>
+                <a href="#kontak" class="btn" onclick="scrollToSection('kontak')">Pesan Layanan</a>
+            </div>
+        </section>
+
+        <!-- Section Baru: Form Kontak -->
+        <section id="kontak" class="contact-section">
+            <div class="container">
+                <h2>Hubungi Kami untuk Pemesanan</h2>
+                <p>Isi form di bawah ini untuk memesan layanan laboratorium. Kami akan balas via email dalam 24 jam.</p>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="userName">Nama Lengkap:</label>
+                        <input type="text" id="userName" name="userName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail">Email:</label>
+                        <input type="email" id="userEmail" name="userEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Layanan yang Dipilih:</label>
+                        <select id="service" name="service" required>
+                            <option value="">Pilih Layanan</option>
+                            <option value="Laboratorium Patologi Klinik">Laboratorium Patologi Klinik</option>
+                            <option value="Lab Patologi Anatomi">Lab Patologi Anatomi</option>
+                            <option value="Lab Transfusi (Bank Darah)">Lab Transfusi (Bank Darah)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan Tambahan (misalnya: Jadwal atau Detail Tes):</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Kirim Pesan</button>
+                </form>
+                <div id="formMessage" class="form-message"></div>
             </div>
         </section>
     </main>
@@ -75,6 +108,8 @@
         </div>
     </footer>
 
+    <!-- EmailJS Script -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
